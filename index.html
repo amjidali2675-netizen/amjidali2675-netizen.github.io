@@ -7,22 +7,22 @@
 
 <title>LunarMC</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
 <style>
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, sans-serif;
+font-family:'Montserrat',sans-serif;
 }
 
 /* SFONDO */
 
 body{
-background: radial-gradient(circle at top,#3a0ca3,#1a0033 40%,#050010);
+background: radial-gradient(circle at top,#3a0ca3,#240046,#10002b);
 color:white;
-text-align:center;
-min-height:100vh;
 }
 
 /* STELLE */
@@ -35,148 +35,209 @@ left:0;
 width:100%;
 height:100%;
 background-image:
-radial-gradient(white 1px,transparent 1px),
-radial-gradient(white 1px,transparent 1px);
-background-size:80px 80px;
-opacity:0.2;
+radial-gradient(white 1px, transparent 1px),
+radial-gradient(white 1px, transparent 1px);
+background-size:90px 90px;
+opacity:0.25;
 z-index:-1;
 }
 
-/* LOGO */
+/* NAVBAR */
 
-.logo{
-width:170px;
-margin-top:120px;
-margin-bottom:20px;
-border-radius:25px;
-animation:float 3s ease-in-out infinite;
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 80px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
 }
 
-/* ANIMAZIONE LOGO */
+/* LOGO TESTO */
 
-@keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-12px);}
-100%{transform:translateY(0);}
+nav h1{
+color:#c77dff;
+font-size:28px;
+font-weight:800;
 }
 
-/* IP */
+/* MENU */
 
-.ip{
-font-size:22px;
-margin-bottom:30px;
-opacity:0.9;
+nav ul{
+list-style:none;
+display:flex;
+gap:40px;
 }
 
-/* PULSANTE PLAY */
+nav ul li a{
+text-decoration:none;
+color:white;
+font-weight:600;
+}
 
-.play-btn{
-display:inline-block;
-padding:18px 70px;
+nav ul li a:hover{
+color:#c77dff;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero h2{
+font-size:70px;
+color:#c77dff;
+}
+
+.hero p{
+margin-top:15px;
+font-size:20px;
+opacity:0.8;
+}
+
+/* BOTTONI */
+
+.buttons{
+margin-top:40px;
+display:flex;
+gap:20px;
+}
+
+.btn{
+padding:18px 50px;
+border:none;
 border-radius:40px;
-font-size:22px;
-font-weight:bold;
-background:linear-gradient(90deg,#9d4edd,#7b2cbf);
+font-size:18px;
+font-weight:700;
 cursor:pointer;
-transition:0.3s;
+color:white;
 }
 
-.play-btn:hover{
-transform:scale(1.05);
-box-shadow:0 0 30px #9d4edd;
+.play{
+background:linear-gradient(45deg,#9d4edd,#7b2cbf);
 }
 
-/* SEZIONE */
+.store{
+background:linear-gradient(45deg,#ffb400,#ff6a00);
+}
+
+.staff{
+background:linear-gradient(45deg,#6a0cff,#b366ff);
+}
+
+/* MODALITÀ */
 
 .section{
-margin-top:120px;
+padding:120px 40px;
+text-align:center;
 }
 
-/* TITOLO */
-
-.section h2{
-font-size:42px;
-margin-bottom:50px;
+.section h3{
+font-size:40px;
+margin-bottom:60px;
+color:#c77dff;
 }
 
-/* CARDS */
-
-.cards{
+.modes{
 display:flex;
 justify-content:center;
 gap:40px;
 flex-wrap:wrap;
 }
 
-/* CARD */
-
 .card{
 background:rgba(255,255,255,0.05);
 padding:40px;
-width:280px;
+width:260px;
 border-radius:20px;
-transition:0.3s;
-backdrop-filter:blur(10px);
 }
 
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 25px #7b2cbf;
-}
-
-.card h3{
-font-size:28px;
-color:#c77dff;
+.card h4{
 margin-bottom:10px;
-}
-
-.card p{
-opacity:0.8;
+color:#c77dff;
 }
 
 /* FOOTER */
 
 footer{
-margin-top:100px;
-padding:30px;
-opacity:0.5;
-font-size:15px;
+text-align:center;
+padding:40px;
+opacity:0.7;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<!-- LOGO -->
+<!-- NAVBAR -->
 
-<img src="logo.png" class="logo">
+<nav>
 
-<!-- IP -->
+<h1>LunarMC</h1>
 
-<div class="ip">IP: play.tuoserver.it</div>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="staff.html">Staff</a></li>
+<li><a href="store.html">Store</a></li>
+</ul>
 
-<!-- PLAY BUTTON -->
+</nav>
 
-<div class="play-btn" onclick="copyIP()">PLAY NOW</div>
+<!-- HERO -->
+
+<div class="hero">
+
+<h2>LunarMC</h2>
+
+<p>Server Minecraft PvP</p>
+
+<div class="buttons">
+
+<button class="btn play" onclick="copyIP()">GIOCA ORA</button>
+
+<a href="store.html">
+<button class="btn store">STORE</button>
+</a>
+
+<a href="staff.html">
+<button class="btn staff">STAFF</button>
+</a>
+
+</div>
+
+</div>
 
 <!-- MODALITA -->
 
 <div class="section">
 
-<h2>Modalità</h2>
+<h3>Modalità</h3>
 
-<div class="cards">
+<div class="modes">
 
 <div class="card">
-<h3>Practice</h3>
-<p>Duelli PvP competitivi.</p>
+<h4>⚔ Practice</h4>
+<p>Duelli PvP competitivi</p>
 </div>
 
 <div class="card">
-<h3>Bedwars</h3>
-<p>Modalità classica.</p>
+<h4>🛏 BedWars</h4>
+<p>Difendi il tuo letto</p>
+</div>
+
+<div class="card">
+<h4>🏝 SkyWars</h4>
+<p>Combatti sulle isole</p>
 </div>
 
 </div>
@@ -184,13 +245,15 @@ font-size:15px;
 </div>
 
 <footer>
+
 © 2026 LunarMC
+
 </footer>
 
 <script>
 
 function copyIP(){
-navigator.clipboard.writeText("play.tuoserver.it");
+navigator.clipboard.writeText("play.lunarmc.it");
 alert("IP copiato!");
 }
 
